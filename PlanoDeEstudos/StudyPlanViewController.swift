@@ -34,7 +34,10 @@ class StudyPlanViewController: UIViewController {
         content.categoryIdentifier = "Lembrete"
         
         // Três tipos de notificação: Intervalo de Tempo, Data e Localização
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 15, repeats: false)
+        //let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 15, repeats: false) // Executa por um Intervalo de tempo
+        
+        let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: dpDate.date)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false) // Executa por Data especifica.
         
         // Cria a requisição
         let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
