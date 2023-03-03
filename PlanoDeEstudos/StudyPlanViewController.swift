@@ -25,6 +25,22 @@ class StudyPlanViewController: UIViewController {
         let id = String(Date().timeIntervalSince1970)
         let studyPlan = StudyPlan(course: tfCourse.text!, section: tfSection.text!, date: dpDate.date, done: false, id: id)
 
+        // Criando notificação
+        let content = UNMutableNotificationContent()
+        content.title = "Lembrete"
+        content.subtitle = "Matéria: \(studyPlan.course)"
+        content.body = "Estudar \(studyPlan.section)"
+        // content.sound = UNNotificationSound(named: "arquivodesom.caf") // para tocar som na notificação
+        content.categoryIdentifier = "Lembrete"
+        
+        // Três tipos de notificação: Intervalo de Tempo, Data e Localização
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 15, repeats: false)
+        
+        // Cria a requisição
+        let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
+        
+        // Adiciona a notificação
+        UNUserNotificationCenter.current().add(request)
         
         
         sm.addPlan(studyPlan)

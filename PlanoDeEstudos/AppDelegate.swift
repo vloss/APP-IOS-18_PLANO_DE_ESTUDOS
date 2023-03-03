@@ -13,10 +13,46 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let center = UNUserNotificationCenter.current()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         window?.tintColor = UIColor(named: "main")
+        
+        center.delegate = self
+        // Validação de permissão de acesso a notificação
+        center.getNotificationSettings { (settings) in
+            if settings.authorizationStatus == .notDetermined {
+                let options: UNAuthorizationOptions = [.alert, .sound, .badge, .carPlay] // Array com as permissões que seram solicitadas acesso.
+                
+                // Requisita autorização para o usuário
+                self.center.requestAuthorization(options: options) { (success, error) in
+                    if error == nil {
+                        print(success)
+                    } else {
+                        print(error?.localizedDescription)
+                    }
+                }
+            } else if settings.authorizationStatus == .denied {
+                // implementar alerta, e redirecionamento para tela configurações para liberar permissões
+                print("Usuário negou a permissão de acesso a notificações")
+            }
+        }
+        
+        // Opções de notificações
+        // .authenticationRequired: Tela tem que estar desbloqueada
+        // .destructive: aparecerá em vermelho, ação destrutiva
+        // .foreground:  segnifica que vai trazer o app para frente
+        
+        
+        
+        let confirmAction = UNNotificationAction(identifier: "Confirm", title: "Já estudei 👍", options: [.foreground])
+        let cancelAction = UNNotificationAction(identifier: "Cancel", title: "Cancelar", options: [])
+        
+        let category = UNNotificationCategory(identifier: "Lembrete", actions: [confirmAction, cancelAction], intentIdentifiers: [], hiddenPreviewsBodyPlaceholder: "", options: [.customDismissAction])
+        
+        center.setNotificationCategories(category)
+        
         return true
     }
 
@@ -42,4 +78,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    
 }
