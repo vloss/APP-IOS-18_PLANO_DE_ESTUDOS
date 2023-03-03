@@ -19,8 +19,6 @@ class StudyPlanViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dpDate.minimumDate = Date() // Difine data minima para datepicker
-        
-        
     }
 
     @IBAction func schedule(_ sender: UIButton) {

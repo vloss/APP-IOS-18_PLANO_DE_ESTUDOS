@@ -65,8 +65,8 @@
 				A12AC6091F9D1487006EEC7B /* AppDelegate.swift */,
 				A12AC60B1F9D1487006EEC7B /* ViewController.swift */,
 				B7CD289129B1A59F001109E6 /* StudyPlan.swift */,
-				A12AC60D1F9D1487006EEC7B /* Main.storyboard */,
 				B7CD289329B1A8DF001109E6 /* StudyManager.swift */,
+				A12AC60D1F9D1487006EEC7B /* Main.storyboard */,
 				A12AC61B1F9D1741006EEC7B /* StudyPlanViewController.swift */,
 				A12AC61D1F9D18D5006EEC7B /* StudyPlansTableViewController.swift */,
 				A12AC6101F9D1487006EEC7B /* Assets.xcassets */,
@@ -291,10 +291,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3Y5F7BP894;
 				INFOPLIST_FILE = PlanoDeEstudos/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ericbrito.PlanoDeEstudos;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.vloss.PlanoDeEstudos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -305,10 +310,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3Y5F7BP894;
 				INFOPLIST_FILE = PlanoDeEstudos/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ericbrito.PlanoDeEstudos;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.vloss.PlanoDeEstudos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
