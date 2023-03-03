@@ -45,8 +45,8 @@ class StudyPlansTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            sm.removePlan(at: indexPath.row) // Chama o metodo para remover do array e do UserDefault
+            tableView.deleteRows(at: [indexPath], with: .bottom) // deleta a linha da tableview
         }
     }
-
-
 }

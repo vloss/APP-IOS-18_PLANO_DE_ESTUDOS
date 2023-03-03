@@ -6,7 +6,7 @@
 //  Copyright © 2017 Eric Brito. All rights reserved.
 
 import UIKit
-import UserNotifications
+import UserNotifications // Para notificações
 
 class StudyPlanViewController: UIViewController {
 
@@ -25,6 +25,8 @@ class StudyPlanViewController: UIViewController {
         let id = String(Date().timeIntervalSince1970)
         let studyPlan = StudyPlan(course: tfCourse.text!, section: tfSection.text!, date: dpDate.date, done: false, id: id)
 
+        
+        
         sm.addPlan(studyPlan)
         navigationController!.popViewController(animated: true)
     }
