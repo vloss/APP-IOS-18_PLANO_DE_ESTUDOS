@@ -81,5 +81,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
+    // para mostrar a notificação mesmo que o usuário esteja no App (ios 10 ou superior)
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound]) // Dispera uma notificação e o som.
+    }
     
+    // Disparado toda vez que o usuário recebe a notificação e captura a ação que o usuário tomou
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        print("AQUIIII: didReceive response")
+        
+        // através do response se tem acesso a todos dados da notificaação
+        // response.notification.request.content.title
+        
+        let id = response.notification.request.identifier
+        print("identifier da notiticação: ", id)
+        
+        // Validando o identifier da notificação
+        switch response.actionIdentifier {
+            case "Confirm":
+                print("Usuário confirmou que já estudou a matéria")
+            case "Cancel":
+                print("Usuário cancelou")
+            case UNNotificationDefaultActionIdentifier:
+                print("Tocou na Notificação")
+            case UNNotificationDismissActionIdentifier:
+                print("Dismiss na notificação, jogou pro lado")
+            default:
+                break
+        }
+        completionHandler()
+    }
 }
