@@ -14,6 +14,8 @@
 		A12AC6141F9D1487006EEC7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A12AC6121F9D1487006EEC7B /* LaunchScreen.storyboard */; };
 		A12AC61C1F9D1741006EEC7B /* StudyPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12AC61B1F9D1741006EEC7B /* StudyPlanViewController.swift */; };
 		A12AC61E1F9D18D5006EEC7B /* StudyPlansTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12AC61D1F9D18D5006EEC7B /* StudyPlansTableViewController.swift */; };
+		B7CD289229B1A5A0001109E6 /* StudyPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CD289129B1A59F001109E6 /* StudyPlan.swift */; };
+		B7CD289429B1A8DF001109E6 /* StudyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CD289329B1A8DF001109E6 /* StudyManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		A12AC6151F9D1487006EEC7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A12AC61B1F9D1741006EEC7B /* StudyPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyPlanViewController.swift; sourceTree = "<group>"; };
 		A12AC61D1F9D18D5006EEC7B /* StudyPlansTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyPlansTableViewController.swift; sourceTree = "<group>"; };
+		B7CD289129B1A59F001109E6 /* StudyPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyPlan.swift; sourceTree = "<group>"; };
+		B7CD289329B1A8DF001109E6 /* StudyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +64,9 @@
 			children = (
 				A12AC6091F9D1487006EEC7B /* AppDelegate.swift */,
 				A12AC60B1F9D1487006EEC7B /* ViewController.swift */,
+				B7CD289129B1A59F001109E6 /* StudyPlan.swift */,
 				A12AC60D1F9D1487006EEC7B /* Main.storyboard */,
+				B7CD289329B1A8DF001109E6 /* StudyManager.swift */,
 				A12AC61B1F9D1741006EEC7B /* StudyPlanViewController.swift */,
 				A12AC61D1F9D18D5006EEC7B /* StudyPlansTableViewController.swift */,
 				A12AC6101F9D1487006EEC7B /* Assets.xcassets */,
@@ -143,9 +149,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A12AC60C1F9D1487006EEC7B /* ViewController.swift in Sources */,
+				B7CD289229B1A5A0001109E6 /* StudyPlan.swift in Sources */,
 				A12AC61C1F9D1741006EEC7B /* StudyPlanViewController.swift in Sources */,
 				A12AC61E1F9D18D5006EEC7B /* StudyPlansTableViewController.swift in Sources */,
 				A12AC60A1F9D1487006EEC7B /* AppDelegate.swift in Sources */,
+				B7CD289429B1A8DF001109E6 /* StudyManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
