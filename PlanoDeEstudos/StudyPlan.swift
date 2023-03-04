@@ -9,6 +9,7 @@
 import Foundation
 
 class StudyPlan: Codable {
+    
     let course: String
     let section: String
     let date: Date

@@ -30,7 +30,6 @@ class StudyPlansTableViewController: UITableViewController {
     
     @objc func onReceive(notification: Notification){
         if let userInfo = notification.userInfo, let id = userInfo["id"] as? String{
-            print("AQUIIII 2 - ID: ", id)
             sm.setPlanDone(id: id)
             tableView.reloadData()
         }
@@ -48,7 +47,6 @@ class StudyPlansTableViewController: UITableViewController {
         
         cell.textLabel?.text = studyPlan.section
         cell.detailTextLabel?.text = dateFormatter.string(from: studyPlan.date)
-        
         cell.backgroundColor = studyPlan.done ? .green : .white
         
         return cell

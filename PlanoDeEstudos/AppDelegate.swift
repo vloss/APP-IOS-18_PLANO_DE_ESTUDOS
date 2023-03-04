@@ -43,9 +43,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // .authenticationRequired: Tela tem que estar desbloqueada
         // .destructive: aparecerá em vermelho, ação destrutiva
         // .foreground:  segnifica que vai trazer o app para frente
-        
-        
-        
         let confirmAction = UNNotificationAction(identifier: "Confirm", title: "Já estudei 👍", options: [.foreground])
         let cancelAction = UNNotificationAction(identifier: "Cancel", title: "Cancelar", options: [])
         
@@ -92,7 +89,6 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         
         // através do response se tem acesso a todos dados da notificaação
         // response.notification.request.content.title
-        
         let id = response.notification.request.identifier
         print("identifier da notiticação: ", id)
         
@@ -100,7 +96,6 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         switch response.actionIdentifier {
             case "Confirm":
                 print("Usuário confirmou que já estudou a matéria")
-                print("AQUIIII - ID: ", id)
                 // Utilizado para disparar notificações para outras telas
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Confirmed"), object: nil, userInfo: ["id":id])
             case "Cancel":
